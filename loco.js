@@ -2,7 +2,6 @@ const scroll = new LocomotiveScroll({
     el: document.querySelector('#main'),
     smooth: true
 });
-
 function firstPageAnim(){
     var tl = gsap.timeline();
 
@@ -28,32 +27,32 @@ function firstPageAnim(){
     ease: Expo.easeInOUt
 })
 }
-function circlechaptakaro(){
-    var xscale = 1;
-    var yscale = 1;
+// function circlechaptakaro(){
+//     var xscale = 1;
+//     var yscale = 1;
 
-    var xprev = 0;
-    var yprev = 0;
-    window.addEventListener("mousemove",function(dets){
-        xscale = gsap.utils.clamp(.8,1.2,dets.clientX - xprev);
-        yscale = gsap.utils.clamp(.8,1.2,dets.clientY - yprev);
+//     var xprev = 0;
+//     var yprev = 0;
+//     window.addEventListener("mousemove",function(dets){
+//         xscale = gsap.utils.clamp(.8,1.2,dets.clientX - xprev);
+//         yscale = gsap.utils.clamp(.8,1.2,dets.clientY - yprev);
 
-       xprev = dets.clientX;
-       yprev = dets.clientY;
+//        xprev = dets.clientX;
+//        yprev = dets.clientY;
 
-       circleMouseFollower(xscale, yscale);
+//        circleMouseFollower(xscale, yscale);
        
-    });
+//     });
    
-}
-circlechaptakaro();
-function circleMouseFollower(xscale,yscale){
-    window.addEventListener("mousemove",function(dets){
+// }
+// circlechaptakaro();
+// function circleMouseFollower(xscale,yscale){
+//     window.addEventListener("mousemove",function(dets){
         
-        document.querySelector("#minicircles").style.transform=`translate(${dets.clientX}px,${dets.clientY}px) scale(${xscale},${yscale})`;
+//         document.querySelector("#minicircles").style.transform=`translate(${dets.clientX}px,${dets.clientY}px) scale(${xscale},${yscale})`;
         
-    })
-}
-circleMouseFollower();
+//     })
+// }
+// circleMouseFollower();
 firstPageAnim()
 
